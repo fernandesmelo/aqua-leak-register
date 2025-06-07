@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { View, ActivityIndicator } from 'react-native';
 
-const API_URL = 'http://192.168.1.14:3000';
+const API_URL = 'http://26.146.143.87:3000';
 
 export default function MapScreen() {
   const [pets, setPets] = useState([]);
