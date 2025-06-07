@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const Pet = require('../models/Pet');
+const Pet = require('./models/Pet');
 const router = express.Router();
 
 const upload = multer({ dest: 'uploads/' });
