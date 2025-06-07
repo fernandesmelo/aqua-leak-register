@@ -49,7 +49,7 @@ export default function AddPetScreen({ navigation }) {
 
     if (foto) {
       formData.append("foto", {
-        uri: foto,
+        uri: foto.uri,
         name: "pet.jpg",
         type: "image/jpg",
       });
