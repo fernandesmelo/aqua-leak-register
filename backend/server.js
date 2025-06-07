@@ -5,7 +5,6 @@ const petsRouter = require('./index');
 
 const app = express();
 app.use(cors());
-app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
 mongoose.connect('mongodb+srv://laerciofernandesmelonetoo:F4htN3zIPWLbOVUm@petregisterapp.ehb4tjy.mongodb.net/?retryWrites=true&w=majority&appName=petregisterapp');
