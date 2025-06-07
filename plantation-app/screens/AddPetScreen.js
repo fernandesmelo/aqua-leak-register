@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { View, Image, Alert } from 'react-native';
-import { TextInput, Button } from 'react-native-paper';
-import * as Location from 'expo-location';
-import * as ImagePicker from 'expo-image-picker';
-import styles from '../styles/styles';
+import React, { useEffect, useState } from "react";
+import { View, Image, Alert } from "react-native";
+import { TextInput, Button } from "react-native-paper";
+import * as Location from "expo-location";
+import * as ImagePicker from "expo-image-picker";
+import styles from "../styles/styles";
 
-const API_URL = 'http://26.146.143.87:3000';
+const API_URL = "http://26.146.143.87:3000";
 
 export default function AddPetScreen({ navigation }) {
-  const [nome, setNome] = useState('');
-  const [descricao, setDescricao] = useState('');
+  const [nome, setNome] = useState("");
+  const [descricao, setDescricao] = useState("");
   const [foto, setFoto] = useState(null);
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status === 'granted') {
+      if (status === "granted") {
         const loc = await Location.getCurrentPositionAsync({});
         setLocation(loc.coords);
       } else {
-        Alert.alert('Permissão de localização negada');
+        Alert.alert("Permissão de localização negada");
       }
     })();
   }, []);
 
   const pickImage = async () => {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
-    if (status !== 'granted') {
-      Alert.alert('Permissão para acessar a câmera foi negada!');
+    if (status !== "granted") {
+      Alert.alert("Permissão para acessar a câmera foi negada!");
       return;
     }
 
@@ -44,33 +44,33 @@ export default function AddPetScreen({ navigation }) {
 
   const handleSubmit = async () => {
     const formData = new FormData();
-    formData.append('nome', nome);
-    formData.append('descricao', descricao);
+    formData.append("nome", nome);
+    formData.append("descricao", descricao);
 
     if (foto) {
-      formData.append('foto', {
-        uri: foto.uri,
-        name: 'pet.jpg',
-        type: 'image/jpeg',
+      formData.append("foto", {
+        uri: foto,
+        name: "pet.jpg",
+        type: "image/jpg",
       });
     }
 
     if (location) {
-      formData.append('latitude', location.latitude.toString());
-      formData.append('longitude', location.longitude.toString());
+      formData.append("latitude", location.latitude.toString());
+      formData.append("longitude", location.longitude.toString());
     }
 
     try {
       await fetch(`${API_URL}/pets`, {
-        method: 'POST',
+        method: "POST",
         body: formData,
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
-      navigation.navigate('Home');
+      navigation.navigate("Home");
     } catch (error) {
-      Alert.alert('Erro ao salvar pet', error.message);
+      Alert.alert("Erro ao salvar pet", error.message);
     }
   };
 
@@ -103,7 +103,12 @@ export default function AddPetScreen({ navigation }) {
       {foto && (
         <Image
           source={{ uri: foto.uri }}
-          style={{ width: '100%', height: 200, marginBottom: 10, borderRadius: 8 }}
+          style={{
+            width: "100%",
+            height: 200,
+            marginBottom: 10,
+            borderRadius: 8,
+          }}
         />
       )}
 

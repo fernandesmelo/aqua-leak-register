@@ -12,4 +12,4 @@ mongoose.connect('mongodb+srv://laerciofernandesmelonetoo:F4htN3zIPWLbOVUm@petre
 
 app.use('/pets', petsRouter);
 
-app.listen(3000, () => console.log('Backend listening on port 3000'));
+app.listen(3000, () => console.log('Backend rodando na porta 3000'));
