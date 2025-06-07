@@ -5,14 +5,14 @@ import { View, ActivityIndicator } from 'react-native';
 const API_URL = 'http://192.168.1.14:3000';
 
 export default function MapScreen() {
-  const [plantations, setPlantations] = useState([]);
+  const [pets, setPets] = useState([]);
   const [region, setRegion] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${API_URL}/plantations`);
+      const res = await fetch(`${API_URL}/pets`);
       const data = await res.json();
-      setPlantations(data);
+      setPets(data);
 
       if (data.length > 0) {
         const avgLat =
@@ -43,15 +43,15 @@ export default function MapScreen() {
   return (
     <View style={{ flex: 1 }}>
       <MapView style={{ flex: 1 }} initialRegion={region}>
-        {plantations.map((p) => (
+        {pets.map((p) => (
           <Marker
             key={p._id}
             coordinate={{
               latitude: Number(p.latitude),
               longitude: Number(p.longitude),
             }}
-            title={p.name}
-            description={p.description}
+            title={p.nome}
+            description={p.descricao}
             pinColor="green"
           />
         ))}
