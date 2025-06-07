@@ -37,7 +37,7 @@ export default function HomeScreen() {
           </Card>
         )}
       />
-      <FAB icon="plus" style={styles.fab} onPress={() => navigation.navigate('Add Pet')} />
+      <FAB icon="plus" style={styles.fab} onPress={() => navigation.navigate('Adicionar Pet')} />
       <FAB icon="map" style={styles.mapButton} onPress={() => navigation.navigate('Mapa')} />
     </View>
   );
