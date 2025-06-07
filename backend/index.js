@@ -1,44 +1,21 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
 const multer = require('multer');
-const path = require('path');
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use('/uploads', express.static('uploads'));
+const Pet = require('../models/Pet');
+const router = express.Router();
 
-mongoose.connect('mongodb://localhost:27017/plantations');
+const upload = multer({ dest: 'uploads/' });
 
-const Plantation = mongoose.model('Plantation', {
-  name: String,
-  description: String,
-  photo: String,
-  latitude: Number,
-  longitude: Number,
+router.get('/', async (req, res) => {
+  const pets = await Pet.find();
+  res.json(pets);
 });
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
-  }
-});
-const upload = multer({ storage: storage });
-
-app.get('/plantations', async (req, res) => {
-  const plantations = await Plantation.find();
-  res.json(plantations);
+router.post('/', upload.single('foto'), async (req, res) => {
+  const { nome, descricao, latitude, longitude } = req.body;
+  const foto = req.file ? req.file.filename : '';
+  const pet = new Pet({ nome, descricao, foto, latitude, longitude });
+  await pet.save();
+  res.json(pet);
 });
 
-app.post('/plantations', upload.single('photo'), async (req, res) => {
-  const { name, description, latitude, longitude } = req.body;
-  const photo = req.file ? req.file.path : null;
-  const plantation = new Plantation({ name, description, photo, latitude, longitude });
-  await plantation.save();
-  res.json(plantation);
-});
-
-app.listen(3000, () => console.log('Backend listening on port 3000'));
+module.exports = router;
