@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeLeakScreen from './screens/HomeLeakScreen';
+import HomeLeakScreen from './screens/HomeScreen';
 import AddLeakScreen from './screens/AddLeakScreen';
 import MapScreen from './screens/MapScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
