@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, FlatList } from "react-native";
 import { Card, FAB } from "react-native-paper";
-import homeStyles from "../styles/homeStyles";
+import homeStyles from "./styles";
 
 const API_URL = "http://SEU_BACKEND_URL:3000";
 

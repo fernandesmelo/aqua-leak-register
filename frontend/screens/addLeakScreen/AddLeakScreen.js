@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Image } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import * as ImagePicker from "expo-image-picker";
-import addLeakStyles from "../styles/addLeakStyles";
+import addLeakStyles from "./styles";
 
 const API_URL = "http://SEU_BACKEND_URL:3000";
 

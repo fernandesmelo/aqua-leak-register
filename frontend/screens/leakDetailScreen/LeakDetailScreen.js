@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
-import leakDetailStyles from "../styles/leakDetailStyles";
+import leakDetailStyles from "./styles";
 
 const API_URL = "http://SEU_BACKEND_URL:3000";
 

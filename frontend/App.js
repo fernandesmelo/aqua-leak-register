@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeLeakScreen from './screens/HomeScreen';
-import AddLeakScreen from './screens/AddLeakScreen';
-import MapScreen from './screens/MapScreen';
+import HomeLeakScreen from './screens/homeScreen/HomeScreen';
+import AddLeakScreen from './screens/addLeakScreen/AddLeakScreen';
+import MapScreen from './screens/mapScreen/MapScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
-import LeakDetailScreen from './screens/LeakDetailScreen';
+import LeakDetailScreen from './screens/leakDetailScreen/LeakDetailScreen';
 
 const Stack = createStackNavigator();
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, ActivityIndicator } from "react-native";
 import MapView, { Marker } from "react-native-maps";
-import mapStyles from "../styles/mapStyles";
+import mapStyles from "./styles";
 
 const API_URL = "http://SEU_BACKEND_URL:3000";
 
