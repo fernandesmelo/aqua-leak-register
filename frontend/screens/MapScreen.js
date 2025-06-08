@@ -5,20 +5,20 @@ import { View, ActivityIndicator } from "react-native";
 const API_URL = "http://26.146.143.87:3000";
 
 export default function MapScreen() {
-  const [pets, setPets] = useState([]);
+  const [leaks, setLeaks] = useState([]);
   const [region, setRegion] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${API_URL}/pets`);
+      const res = await fetch(`${API_URL}/leaks`);
       const data = await res.json();
-      setPets(data);
+      setLeaks(data);
 
       if (data.length > 0) {
         const avgLat =
-          data.reduce((sum, p) => sum + Number(p.latitude), 0) / data.length;
+          data.reduce((sum, l) => sum + Number(l.latitude), 0) / data.length;
         const avgLng =
-          data.reduce((sum, p) => sum + Number(p.longitude), 0) / data.length;
+          data.reduce((sum, l) => sum + Number(l.longitude), 0) / data.length;
 
         setRegion({
           latitude: avgLat,
@@ -43,17 +43,16 @@ export default function MapScreen() {
   return (
     <View style={{ flex: 1 }}>
       <MapView style={{ flex: 1 }} initialRegion={region}>
-        // ...existing code...
-        {pets.map((p) => (
+        {leaks.map((l) => (
           <Marker
-            key={p._id}
+            key={l._id}
             coordinate={{
-              latitude: Number(p.latitude),
-              longitude: Number(p.longitude),
+              latitude: Number(l.latitude),
+              longitude: Number(l.longitude),
             }}
-            title={p.name}
-            description={p.description}
-            pinColor={p.emPerigo ? "red" : "green"}
+            title={l.name}
+            description={l.description}
+            pinColor={l.emPerigo ? "red" : "green"}
           />
         ))}
       </MapView>
