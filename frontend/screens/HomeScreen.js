@@ -6,14 +6,14 @@ import styles from "../styles/styles";
 
 const API_URL = "http://26.146.143.87:3000";
 
-export default function HomeScreen() {
-  const [pets, setPets] = useState([]);
+export default function HomeLeakScreen() {
+  const [leaks, setLeaks] = useState([]);
   const navigation = useNavigation();
 
   const fetchData = async () => {
-    const res = await fetch(`${API_URL}/pets`);
+    const res = await fetch(`${API_URL}/leaks`);
     const data = await res.json();
-    setPets(data);
+    setLeaks(data);
   };
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <FlatList
-        data={pets}
+        data={leaks}
         keyExtractor={(item) => item._id}
         renderItem={({ item }) => (
           <Card
@@ -59,7 +59,7 @@ export default function HomeScreen() {
               <Button
                 mode="contained-tonal"
                 icon="eye"
-                onPress={() => navigation.navigate("Detalhes", { pet: item })}
+                onPress={() => navigation.navigate("Detalhes", { leak: item })}
                 compact
                 style={{ backgroundColor: "#9381ff" }}
                 textColor="#fff"
