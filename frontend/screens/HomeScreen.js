@@ -62,7 +62,6 @@ export default function HomeScreen() {
           style={styles.mapButton}
           onPress={() => navigation.navigate('Mapa')}
         />
-        <Text style={{ marginTop: 4, fontSize: 16 }}>Ver Mapa</Text>
       </View>
 
       <View style={{ position: 'absolute', bottom: 20, right: 20, alignItems: 'center' }}>
@@ -71,7 +70,6 @@ export default function HomeScreen() {
           style={styles.fab}
           onPress={() => navigation.navigate('Registrar Animal')}
         />
-        <Text style={{ marginTop: 4, fontSize: 16 }}>Registrar</Text>
       </View>
     </View>
   );

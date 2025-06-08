@@ -4,8 +4,6 @@ import { View, ActivityIndicator } from 'react-native';
 
 const API_URL = 'http://26.146.143.87:3000';
 
-
-
 export default function MapScreen() {
   const [pets, setPets] = useState([]);
   const [region, setRegion] = useState(null);
