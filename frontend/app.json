@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "find-pet",
+    "slug": "find-pet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/FindPetSplash.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/FindPetSplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "##F6F1F1"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/FindPetSplash.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/FindPetSplash.png"
+    }
+  }
+}
