@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
-const API_URL = 'http://192.168.20.67:3000';
+const API_URL = 'http://26.146.143.87:3000';
 
 export default function PetDetailScreen() {
   const route = useRoute();

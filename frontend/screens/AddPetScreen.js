@@ -5,7 +5,7 @@ import * as Location from 'expo-location';
 import * as ImagePicker from 'expo-image-picker';
 import styles from '../styles/styles';
 
-const API_URL = 'http://192.168.20.67:3000';
+const API_URL = 'http://26.146.143.87:3000';
 
 
 
