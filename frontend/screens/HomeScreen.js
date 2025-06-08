@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { View, FlatList, Image, Text } from 'react-native';
-import { FAB, Card, Title, Paragraph, Button } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
-import styles from '../styles/styles';
+import React, { useEffect, useState } from "react";
+import { View, FlatList } from "react-native";
+import { FAB, Card, Title, Paragraph, Button } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
+import styles from "../styles/styles";
 
-const API_URL = 'http://26.146.143.87:3000'; 
+const API_URL = "http://26.146.143.87:3000";
 
 export default function HomeScreen() {
   const [pets, setPets] = useState([]);
@@ -26,12 +26,25 @@ export default function HomeScreen() {
         data={pets}
         keyExtractor={(item) => item._id}
         renderItem={({ item }) => (
-          <Card style={[styles.card, { backgroundColor: '#f9f9f9', borderWidth: 1, borderColor: '#ddd' }]}>
+          <Card
+            style={[
+              styles.card,
+              {
+                backgroundColor: "#f9f9f9",
+                borderWidth: 1,
+                borderColor: "#ddd",
+              },
+            ]}
+          >
             <Card.Content>
               <Title>{item.name}</Title>
               <Paragraph>{item.description}</Paragraph>
-              <Paragraph style={{ color: item.emPerigo ? '#FF5722' : '#4CAF50' }}>
-                {item.emPerigo ? "⚠️ Está em perigo!" : "✅ Não parece em perigo"}
+              <Paragraph
+                style={{ color: item.emPerigo ? "#FF5722" : "#4CAF50" }}
+              >
+                {item.emPerigo
+                  ? "⚠️ Vazamento grave!"
+                  : "✅ Vazamento controlado"}
               </Paragraph>
             </Card.Content>
             {item.photo && (
@@ -40,13 +53,15 @@ export default function HomeScreen() {
                 style={styles.image}
               />
             )}
-            <Card.Actions style={{ justifyContent: 'flex-end', paddingHorizontal: 8 }}>
+            <Card.Actions
+              style={{ justifyContent: "flex-end", paddingHorizontal: 8 }}
+            >
               <Button
                 mode="contained-tonal"
                 icon="eye"
-                onPress={() => navigation.navigate('Detalhes', { pet: item })}
+                onPress={() => navigation.navigate("Detalhes", { pet: item })}
                 compact
-                style={{ backgroundColor: '#9381ff' }}
+                style={{ backgroundColor: "#9381ff" }}
                 textColor="#fff"
               >
                 Ver Detalhes
@@ -55,20 +70,18 @@ export default function HomeScreen() {
           </Card>
         )}
       />
-
-      <View style={{ position: 'absolute', bottom: 20, left: 20, alignItems: 'center' }}>
-        <FAB
-          icon="map"
-          style={styles.mapButton}
-          onPress={() => navigation.navigate('Mapa')}
-        />
-      </View>
-
-      <View style={{ position: 'absolute', bottom: 20, right: 20, alignItems: 'center' }}>
+      <View
+        style={{
+          position: "absolute",
+          bottom: 20,
+          right: 20,
+          alignItems: "center",
+        }}
+      >
         <FAB
           icon="plus"
           style={styles.fab}
-          onPress={() => navigation.navigate('Registrar Animal')}
+          onPress={() => navigation.navigate("Registrar Vazamento")}
         />
       </View>
     </View>
