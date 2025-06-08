@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import MapView, { Marker } from 'react-native-maps';
-import { View, ActivityIndicator } from 'react-native';
+import React, { useEffect, useState } from "react";
+import MapView, { Marker } from "react-native-maps";
+import { View, ActivityIndicator } from "react-native";
 
-const API_URL = 'http://26.146.143.87:3000';
+const API_URL = "http://26.146.143.87:3000";
 
 export default function MapScreen() {
   const [pets, setPets] = useState([]);
@@ -15,8 +15,10 @@ export default function MapScreen() {
       setPets(data);
 
       if (data.length > 0) {
-        const avgLat = data.reduce((sum, p) => sum + Number(p.latitude), 0) / data.length;
-        const avgLng = data.reduce((sum, p) => sum + Number(p.longitude), 0) / data.length;
+        const avgLat =
+          data.reduce((sum, p) => sum + Number(p.latitude), 0) / data.length;
+        const avgLng =
+          data.reduce((sum, p) => sum + Number(p.longitude), 0) / data.length;
 
         setRegion({
           latitude: avgLat,
@@ -32,7 +34,7 @@ export default function MapScreen() {
 
   if (!region) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" />
       </View>
     );
@@ -41,6 +43,7 @@ export default function MapScreen() {
   return (
     <View style={{ flex: 1 }}>
       <MapView style={{ flex: 1 }} initialRegion={region}>
+        // ...existing code...
         {pets.map((p) => (
           <Marker
             key={p._id}
@@ -50,7 +53,7 @@ export default function MapScreen() {
             }}
             title={p.name}
             description={p.description}
-            pinColor={p.emPerigo ? 'red' : 'green'}
+            pinColor={p.emPerigo ? "red" : "green"}
           />
         ))}
       </MapView>
