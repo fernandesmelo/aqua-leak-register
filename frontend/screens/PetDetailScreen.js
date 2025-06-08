@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import React from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
+import { useRoute } from "@react-navigation/native";
 
-const API_URL = 'http://26.146.143.87:3000';
+const API_URL = "http://26.146.143.87:3000";
 
 export default function PetDetailScreen() {
   const route = useRoute();
@@ -18,22 +18,22 @@ export default function PetDetailScreen() {
       <Text style={styles.name}>{pet.name}</Text>
       <Text style={styles.desc}>{pet.description}</Text>
       <Text style={styles.status}>
-        {pet.emPerigo ? '⚠️ Está em perigo!' : '✅ Não parece em perigo'}
+        {pet.emPerigo ? "⚠️ Vazamento grave!" : "✅ Vazamento controlado"}
       </Text>
       <Text style={styles.coords}>
         📍 Localização:
-        {'\n'}latitude: {pet.latitude}
-        {'\n'}Longitude: {pet.longitude}
+        {"\n"}latitude: {pet.latitude}
+        {"\n"}Longitude: {pet.longitude}
       </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#fff' },
-  image: { width: '100%', height: 300, borderRadius: 10 },
-  name: { fontSize: 24, fontWeight: 'bold', marginTop: 10 },
+  container: { flex: 1, padding: 20, backgroundColor: "#fff" },
+  image: { width: "100%", height: 300, borderRadius: 10 },
+  name: { fontSize: 24, fontWeight: "bold", marginTop: 10 },
   desc: { fontSize: 16, marginVertical: 10 },
-  status: { fontSize: 16, color: '#ff6f61' },
-  coords: { fontSize: 14, color: '#555', marginTop: 15 },
+  status: { fontSize: 16, color: "#ff6f61" },
+  coords: { fontSize: 14, color: "#555", marginTop: 15 },
 });
