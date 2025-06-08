@@ -1,4 +1,4 @@
-# Pet Register App 
+# AquaLeak Register 
 Fiz este projeto através da disciplina de Coding: Mobile da Faculdade Senac Pernambuco.
 
 O que faz?
