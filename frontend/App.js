@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './screens/HomeScreen';
-import AddLeakScreen from './screens/AddPetScreen'; 
+import HomeLeakScreen from './screens/HomeLeakScreen';
+import AddLeakScreen from './screens/AddLeakScreen';
 import MapScreen from './screens/MapScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
-import LeakDetailScreen from './screens/PetDetailScreen';
+import LeakDetailScreen from './screens/LeakDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +14,7 @@ export default function App() {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Home" component={HomeLeakScreen} />
           <Stack.Screen name="Registrar Vazamento" component={AddLeakScreen} />
           <Stack.Screen name="Mapa" component={MapScreen} />
           <Stack.Screen name='Detalhes' component={LeakDetailScreen} />
