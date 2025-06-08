@@ -4,26 +4,26 @@ import { useRoute } from "@react-navigation/native";
 
 const API_URL = "http://26.146.143.87:3000";
 
-export default function PetDetailScreen() {
+export default function LeakDetailScreen() {
   const route = useRoute();
-  const { pet } = route.params;
+  const { leak } = route.params;
 
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: `${API_URL}/${pet.photo}` }}
+        source={{ uri: `${API_URL}/${leak.photo}` }}
         style={styles.image}
         resizeMode="cover"
       />
-      <Text style={styles.name}>{pet.name}</Text>
-      <Text style={styles.desc}>{pet.description}</Text>
+      <Text style={styles.name}>{leak.name}</Text>
+      <Text style={styles.desc}>{leak.description}</Text>
       <Text style={styles.status}>
-        {pet.emPerigo ? "⚠️ Vazamento grave!" : "✅ Vazamento controlado"}
+        {leak.emPerigo ? "⚠️ Vazamento grave!" : "✅ Vazamento controlado"}
       </Text>
       <Text style={styles.coords}>
         📍 Localização:
-        {"\n"}latitude: {pet.latitude}
-        {"\n"}Longitude: {pet.longitude}
+        {"\n"}latitude: {leak.latitude}
+        {"\n"}Longitude: {leak.longitude}
       </Text>
     </View>
   );
