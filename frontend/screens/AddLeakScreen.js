@@ -6,7 +6,7 @@ import styles from "../styles/styles";
 
 const API_URL = "http://26.146.143.87:3000";
 
-export default function AddPetScreen({ navigation }) {
+export default function AddLeakScreen({ navigation }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [emPerigo, setEmPerigo] = useState(false);
@@ -42,7 +42,7 @@ export default function AddPetScreen({ navigation }) {
     });
 
     try {
-      await fetch(`${API_URL}/pets`, {
+      await fetch(`${API_URL}/leaks`, {
         method: "POST",
         body: formData,
         headers: {
