@@ -52,29 +52,34 @@ git clone https://github.com/fernandesmelo/pet-register-app.git
 #### Back-End
 ```bash
 # 1. Acesse a pasta do projeto
-cd api-fatos-historicos/backend
+cd pet-register-app/backend
 
 # 2. Instale as dependências
 npm install
 
 # 3. Rode o projeto
-node app.js
+node server.js
 ```
 
 #### Front-End
 ```bash
 # 1. Abra o projeto no VS Code
-cd frontend.
+cd pet-register-app/frontend.
 
-# 2. Abra o arquivo HTML principal
-É o movie.html ou song.html.
+# 2. Instale o Expo CLI (caso não tenha)
+npm install -g expo-cli
 
-# 3. Clique com o botão direito no index.html
-E selecione "Open with Live Server".
+# 3. Instale as dependências
+npm install
 
-# 4. O navegador será aberto automaticamente
+# 4. Rode o projeto
+npx expo start
 ```
-
+#### Execute no seu celular
+* Baixe o app Expo Go na Play Store (Android) ou App Store (iOS).
+* Abra o app Expo Go no seu celular.
+* Escaneie o QR Code que aparece no terminal ou no navegador após rodar o comando acima.
+  
 ## ⚙️ Executando os Testes
 Próximos passos...
 
