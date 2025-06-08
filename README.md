@@ -2,7 +2,7 @@
 Fiz este projeto através da disciplina de Coding: Mobile da Faculdade Senac Pernambuco.
 
 O que faz?
-Permite cadastrar pets encontrados, tirando foto com a câmera e registrando a localização. Os dados vão para uma API própria e podem ser listados ou vistos no mapa.
+Permite cadastrar vazamentos de água encontrados, tirando foto com a câmera e registrando a localização. Os dados vão para uma API própria e podem ser listados ou vistos no mapa.
 
 ## 🛠️ Construído com
 
