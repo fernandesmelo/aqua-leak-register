@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   card: {
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#e3f0fc",
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: "#90caf9",
     marginBottom: 10,
   },
   cardActions: {

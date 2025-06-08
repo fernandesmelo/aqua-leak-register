@@ -8,10 +8,10 @@ export default StyleSheet.create({
     borderRadius: 8,
   },
   cameraButton: {
-    backgroundColor: "#9381ff",
+    backgroundColor: "#1976d2",
   },
   submitButton: {
-    backgroundColor: "#ff6f61",
+    backgroundColor: "#1565c0",
     marginTop: 10,
   },
 });
